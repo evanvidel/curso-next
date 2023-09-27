@@ -2,37 +2,32 @@ import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
 
-/* <p onClick={() => console.log('P clicado')}> evento sintético 
-Em uma arrow function não tem this, não havendo nessecidade de bind
-ex: this.handleClick = this.handleClick.bind(this) // não precisa
-*/
-
 class App extends Component {
   state = {
-    name: 'Evangelista Franco',
+    name: 'Otávio Miranda',
     counter: 0,
   };
 
-  handlePClick = () => {
-    this.setState({ name: 'Jessica Alba' });
+  handlePclick = () => {
+    this.setState({ name: 'Júnior' });
   };
-  handleAClick = (event) => {
+  handleAclick = (event) => {
     event.preventDefault();
     const { counter } = this.state;
     this.setState({ counter: counter + 1 });
   };
 
   render() {
-    const { name, counter } = this.state; //destructuring
+    const { name, counter } = this.state;
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p onClick={this.handlePClick}>
+          <p onClick={this.handlePclick}>
             {name} {counter}
           </p>
           <a
-            onClick={this.handleAClick}
+            onClick={this.handleAclick}
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
@@ -47,3 +42,27 @@ class App extends Component {
 }
 
 export default App;
+
+/* function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+         Olá mundo!
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+ */
